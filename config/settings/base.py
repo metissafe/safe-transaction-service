@@ -372,9 +372,10 @@ ETH_EVENTS_UPDATED_BLOCK_BEHIND = env.int(
 # Safe
 # ------------------------------------------------------------------------------
 # Number of blocks from the current block number needed to consider a transaction valid/stable
-ETH_REORG_BLOCKS = env.int(
-    "ETH_REORG_BLOCKS", default=50 if ETH_L2_NETWORK else 10
-)  # L2 Networks have more reorgs
+# ETH_REORG_BLOCKS = env.int(
+#     "ETH_REORG_BLOCKS", default=50 if ETH_L2_NETWORK else 10
+# )  # L2 Networks have more reorgs
+ETH_REORG_BLOCKS = 0
 
 # Tokens
 TOKENS_LOGO_BASE_URI = env(

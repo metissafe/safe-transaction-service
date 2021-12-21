@@ -35,7 +35,7 @@ class EthereumIndexer(ABC):
     def __init__(
         self,
         ethereum_client: EthereumClient,
-        confirmations: int = 1,
+        confirmations: int = 0,
         block_process_limit: int = 2000,
         block_process_limit_max: int = 0,
         blocks_to_reindex_again: int = 0,
@@ -222,8 +222,8 @@ class EthereumIndexer(ABC):
             **{
                 "address__in": addresses,
                 self.database_field
-                + "__gte": from_block_number
-                - 1,  # Protect in case of reorg
+                + "__gte": from_block_number,
+                # - 1,  # Protect in case of reorg
                 self.database_field
                 + "__lte": to_block_number,  # Don't update to a lower block number
             }
