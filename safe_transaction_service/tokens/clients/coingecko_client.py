@@ -23,6 +23,8 @@ class CoingeckoClient:
             self.asset_platform = "polygon-pos"
         elif network == EthereumNetwork.XDAI:
             self.asset_platform = "xdai"
+        elif network == EthereumNetwork.ANDROMEDA or network == EthereumNetwork.STARDUST:
+            self.asset_platform = "metis-andromeda"
         else:
             self.asset_platform = "ethereum"
 
